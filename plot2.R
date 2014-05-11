@@ -1,0 +1,5 @@
+powerData <- read.table("./data/household_power_consumption.txt", header = TRUE, sep = ";", na.strings = "?")
+plotdata <- subset(powerData, Date == "2/2/2007" | Date == "1/2/2007")
+png(filename = "plot2.png")
+plot(TimeData, plotdata[["Global_active_power"]],type = "l", xlab = "", ylab = "Global active power (kilowatts)")
+dev.off()
