@@ -2,7 +2,7 @@ powerData <- read.table("./data/household_power_consumption.txt", header = TRUE,
 plotdata <- subset(powerData, Date == "2/2/2007" | Date == "1/2/2007")
 TimeDataCha <- paste(plotdata[["Date"]], plotdata[["Time"]], sep=" ")
 TimeData <- strptime(TimeDataCha, format = "%d/%m/%Y %H:%M:%S")
-Tmipng(filename = "plot4.png")
+png(filename = "plot4.png")
 par(mfrow = c(2,2))
 plot(TimeData, plotdata[["Global_active_power"]],type = "l", xlab = "", ylab = "Global active power (kilowatts)")
 plot(TimeData, plotdata[["Voltage"]],type = "l", xlab = "datatime", ylab = "Voltage")
